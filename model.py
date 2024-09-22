@@ -68,7 +68,7 @@ def prepare_dataset(symbols, sequence_length=10):
     return all_data, scaler
 
 # Define the training process
-def train_model(model, data, epochs=50, lr=0.00001, batch_size=32):
+def train_model(model, data, epochs=50, lr=0.0007, batch_size=32):
     criterion = nn.MSELoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
@@ -107,7 +107,7 @@ def train_model(model, data, epochs=50, lr=0.00001, batch_size=32):
 
 if __name__ == "__main__":
     # Define the model
-    model = EnhancedBiLSTMModel(input_size=3, hidden_layer_size=115, output_size=1, num_layers=2, dropout=0.3)
+    model = EnhancedBiLSTMModel(input_size=2, hidden_layer_size=115, output_size=1, num_layers=2, dropout=0.3)
 
     # Symbols to train on
     symbols = ['BNBUSDT', 'BTCUSDT', 'ETHUSDT', 'SOLUSDT', 'ARBUSDT']
