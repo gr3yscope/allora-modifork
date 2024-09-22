@@ -30,7 +30,7 @@ services:
         condition: service_healthy
 
   worker:
-    container_name: worker
+    container_name: worker-allora
     image: alloranetwork/allora-offchain-node:latest
     volumes:
       - ./worker-data:/data
